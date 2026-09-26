@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* Collections: Array, Hash (Object)
 
@@ -9,8 +9,21 @@ Object example: `{ name: 'Marcus Aurelius', phone: '+380445554433' }`.
 `findPhoneByName(name: string): string`. Returning phone from that object
 where field `name` equals argument `name`. Use `for` loop for this search. */
 
-const phonebook = null;
+const phonebook = [
+  { name: "Kris", phone: "+380790879984" },
+  { name: "Susie", phone: "+380790284047" },
+];
 
-const findPhoneByName = null;
+const findPhoneByName = (name) => {
+  for (const record of phonebook) {
+    if (record.name === name) {
+      return record.phone;
+    }
+  }
+  console.error("Phone number not found");
+  return undefined;
+};
+
+// I hate 100 characters limit
 
 module.exports = { phonebook, findPhoneByName };
